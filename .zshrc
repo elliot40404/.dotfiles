@@ -133,3 +133,6 @@ alias vim=nvim
 ### TERMINAL CUSTOM Key Binds
 bindkey -s "\ew" "ranger\n"
 bindkey -s "^[[17~" "rzs\n"
+
+## Run before shell
+figlet -c "Bonsoir Elliot" | lolcat -a -d 1 -s 50
