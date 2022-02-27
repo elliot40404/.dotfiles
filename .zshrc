@@ -130,9 +130,11 @@ alias apti='sudo apt install'
 alias aptr='sudo apt remove'
 alias aptar='sudo apt autoremove'
 alias vim=nvim
+alias de='cd ~/.dotfiles'
+alias dee='nvim ~/.dotfiles'
 ### TERMINAL CUSTOM Key Binds
 bindkey -s "\ew" "ranger\n"
 bindkey -s "^[[17~" "rzs\n"
 
 ## Run before shell
-figlet -c "Bonsoir Elliot" | lolcat -a -d 1 -s 50
+figlet "Bonsoir Elliot" | lolcat -a -d 1 -s 50

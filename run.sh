@@ -16,9 +16,9 @@ if [[ -e ~/.zshrc ]]; then
 	mv ~/.zshrc ~/.bck_zshrc
 fi
 
-#if [[ -e ~/.bashrc ]]; then
-#	mv ~/.bashrc ~/.bck_bashrc
-#fi
+if [[ -e ~/.tmux.conf ]]; then
+	mv ~/.tmux.conf ~/.bck_tmux.conf
+fi
 
 ## create symlinks 
 
@@ -26,7 +26,7 @@ ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim # nvim config
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc # zsh config
 
-#ln -s ~/.dotfiles/init.vim ~/.bashrc # bash config
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf # tmux config
 
 ## Reload source
 
