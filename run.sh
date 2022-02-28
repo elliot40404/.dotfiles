@@ -21,7 +21,7 @@ if [[ -e ~/.tmux.conf ]]; then
 fi
 
 ## create symlinks 
-
+mkdir -p ~/.config/nvim
 ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim # nvim config
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc # zsh config
@@ -30,4 +30,4 @@ ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf # tmux config
 
 ## Reload source
 
-source ~/.zshrc
+# source ~/.zshrc

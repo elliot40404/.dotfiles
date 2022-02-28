@@ -132,6 +132,11 @@ alias aptar='sudo apt autoremove'
 alias vim=nvim
 alias de='cd ~/.dotfiles'
 alias dee='nvim ~/.dotfiles'
+
+### Shortcut functions
+
+#fc() {a=$(fdfind -aHL $@ | fzf); cd $a }
+
 ### TERMINAL CUSTOM Key Binds
 bindkey -s "\ew" "ranger\n"
 bindkey -s "^[[17~" "rzs\n"
