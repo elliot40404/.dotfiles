@@ -27,11 +27,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-startify'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main'  }
 set encoding=utf-8
 
 call plug#end()
 
-:colorscheme jellybeans
+let g:tokyonight_style = "night"
+colorscheme tokyonight
+":colorscheme jellybeans
 
 " NERD TREE
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -55,7 +58,7 @@ let g:minimap_width = 10
 let g:minimap_auto_start = 1
 let g:minimap_auto_start_win_enter = 1
 let g:minimap_highlight_range = 1
-
+let g:airline#extensions#tabline#enabled = 1
 " Terminal Function
 let g:term_buf = 0
 let g:term_win = 0
