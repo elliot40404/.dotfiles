@@ -1,5 +1,5 @@
 :set number
-":set relativenumber
+:set relativenumber
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
@@ -28,16 +28,19 @@ Plug 'mhinz/vim-startify'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main'  }
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 set encoding=utf-8
 
 call plug#end()
 
 let g:tokyonight_style = "night"
+let g:tokyonight_italic_keywords = 0
 colorscheme tokyonight
 ":colorscheme jellybeans
 
 " NERD TREE
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -96,7 +99,6 @@ nnoremap <A-j> :tabN<CR>
 nnoremap <A-/> :FZA<CR>
 nnoremap <A-v> :vsplit<CR>
 nnoremap <A-h> :split<CR>
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -104,8 +106,15 @@ nnoremap <leader>s <cmd>w<cr>
 nnoremap <leader>w <cmd>wq<cr>
 nnoremap <leader>q <cmd>q<cr>
 nnoremap <leader>qq <cmd>q!<cr>
-nnoremap <leader>f <cmd>Telescope find_files find_command=rg,--files,--hidden,--ignore-vcs prompt_prefix=🔍<cr>
+nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--files,--hidden,--ignore-vcs prompt_prefix=🔍<cr>
 
 command! -bang -nargs=*  FZA
   \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,tmp}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
 
+" Autorun
+autocmd VimEnter *
+            \   if !argc()
+            \ |   Startify
+            \ |   NERDTree
+            \ |   wincmd w
+            \ | endif
