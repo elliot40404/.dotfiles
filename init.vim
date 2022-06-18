@@ -30,6 +30,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main'  }
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'lukas-reineke/indent-blankline.nvim'
 set encoding=utf-8
 
 call plug#end()
@@ -107,6 +108,8 @@ nnoremap <leader>w <cmd>wq<cr>
 nnoremap <leader>q <cmd>q<cr>
 nnoremap <leader>qq <cmd>q!<cr>
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--files,--hidden,--ignore-vcs prompt_prefix=🔍<cr>
+nnoremap <C-Down> :m .+1<CR>==
+nnoremap <C-Up> :m .-2<CR>==
 
 command! -bang -nargs=*  FZA
   \ call fzf#run(fzf#wrap({'source': 'rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git,tmp}"', 'down': '40%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi --reverse' }))
